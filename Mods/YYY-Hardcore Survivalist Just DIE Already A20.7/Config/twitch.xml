@@ -1,0 +1,81 @@
+<Frantic_Dan>
+
+	<insertAfter xpath="//action[@name='twitch_spawnWeapon2']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+
+	<insertAfter xpath="//action[@name='twitch_spawnWeapon3']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+	
+	<insertAfter xpath="//action[@name='twitch_spawnWeapon4']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+
+	<insertAfter xpath="//action[@name='twitch_spawnArmor1']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+	
+	<insertAfter xpath="//action[@name='twitch_spawnArmor2']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+
+	<insertAfter xpath="//action[@name='twitch_spawnMods1']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+
+	<insertAfter xpath="//action[@name='twitch_spawnMods2']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+
+	<insertAfter xpath="//action[@name='twitch_spawnMods3']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+
+	<insertAfter xpath="//action[@name='twitch_spawnTool1']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+	
+	<insertAfter xpath="//action[@name='twitch_spawnTool2']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+
+	<insertAfter xpath="//action[@name='twitch_spawnTool3']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>		
+
+	<insertAfter xpath="//action[@name='twitch_spawnMinibike']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+
+	<insertAfter xpath="//action[@name='twitch_spawnMotorcycle']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+
+	<insertAfter xpath="//action[@name='twitch_spawn4x4']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>	
+
+	<insertAfter xpath="//action[@name='twitch_Explosives4']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+
+	<insertAfter xpath="//action[@name='twitch_Robo1']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+
+	<insertAfter xpath="//action[@name='twitch_Robo2']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+
+	<insertAfter xpath="//action[@name='twitch_Robo3']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+
+	<insertAfter xpath="//action[@name='twitch_buffRegen']//property[6]">
+		<property name="special_only" value="true" />
+	</insertAfter>
+	<set xpath="//action[@name='twitch_buffRegen']//property[8]/@value">300</set>
+	<set xpath="//action[@name='twitch_buffHurt']//property[8]/@value">250</set>
+
+</Frantic_Dan>
