@@ -1,0 +1,58 @@
+<configs>
+	<!--adds Blessed Metal back to the game-->
+	<set xpath="/item_modifiers/item_modifier[@name='modGunMeleeBlessedMetal']/effect_group[@tiered='false']/passive_effect[@name='EntityDamage']/@value">0.15</set>
+	<!--serrated blade can be added to chainsaws-->
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeSerratedBlade']/@installable_tags">,chainsaw</append>
+	<set xpath="/item_modifiers/item_modifier[@name='modMeleeSerratedBlade']/effect_group[1]//requirement[1]/@value">100</set>
+	<!--weighted head can be added to machetes-->
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeWeightedHead']/@installable_tags">,machete</append>
+	<!--makes all dye sellable-->
+	<insertAfter xpath="//item_modifier[@name='modDyeWhite']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	<insertAfter xpath="//item_modifier[@name='modDyeRed']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	<insertAfter xpath="//item_modifier[@name='modDyeGreen']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	<insertAfter xpath="//item_modifier[@name='modDyeBlack']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	<insertAfter xpath="//item_modifier[@name='modDyeBlue']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	<insertAfter xpath="//item_modifier[@name='modDyeBrown']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	<insertAfter xpath="//item_modifier[@name='modDyePink']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	<insertAfter xpath="//item_modifier[@name='modDyePurple']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	<insertAfter xpath="//item_modifier[@name='modDyeYellow']//property[5]">
+	<property name="EconomicValue" value="500"/>
+	</insertAfter>
+	
+	<insertAfter xpath="//item_modifier[@name='modArmorBandolier']">
+	<item_modifier name="HighPerfomanceRunningSoles" installable_tags="armorFeet" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
+        <property name="Extends" value="modGeneralMaster"/>
+        <property name="DescriptionKey" value="apparelRunningShoesHPDesc"/>
+        <property name="CustomIcon" value="apparelRunningShoesRegular"/>
+        <property name="CustomIconTint" value="86,255,109"/>
+        <property name="DisplayType" value="clothingRunningShoes"/>
+        <property name="CreativeMode" value="Player"/>
+	<property name="EconomicValue" value="12500" />
+        <property name="Weight" value="0"/>
+
+    <effect_group tiered="false">
+        <passive_effect name="HypothermalResist" operation="base_add" value="4.2"/>
+        <passive_effect name="HyperthermalResist" operation="base_add" value="4.5"/>
+        <passive_effect name="StaminaChangeOT" operation="perc_add" value=".1" tags="running"/><display_value name="dStaminaRegen" value=".1"/>
+        <!-- </passive_effect> -->
+    </effect_group>
+    </item_modifier>
+	</insertAfter>
+	
+</configs>
