@@ -150,6 +150,7 @@
 	<set xpath="/entity_classes/entity_class[@name='zombieFatHawaiian']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax'][@operation='base_set']/@value">360</set>	
 	<set xpath="/entity_classes/entity_class[@name='zombieFatHawaiianFeral']/property[@name='ExperienceGain']/@value">900</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieFatHawaiianFeral']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax'][@operation='base_set']/@value">684</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatHawaiianRadiated']/property[@name='ExperienceGain']/@value">1125</set>
 	
 	<set xpath="/entity_classes/entity_class[@name='zombieFatCop']/property[@name='ExperienceGain']/@value">563</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieFatCop']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax'][@operation='base_set']/@value">300</set>	
@@ -176,7 +177,7 @@
 	<set xpath="/entity_classes/entity_class[@name='zombieUtilityWorkerFeral']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax'][@operation='base_set']/@value">342</set>
 	
 	<set xpath="/entity_classes/entity_class[@name='zombieSoldier']/property[@name='ExperienceGain']/@value">563</set>
-	<set xpath="/entity_classes/entity_class[@name='zombieSoldier']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax'][@operation='base_set']/@value">300</set>	
+	<set xpath="/entity_classes/entity_class[@name='zombieSoldier']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax'][@operation='base_set']/@value">180</set>	
 	<set xpath="/entity_classes/entity_class[@name='zombieSoldierFeral']/property[@name='ExperienceGain']/@value">900</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieSoldierFeral']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax'][@operation='base_set']/@value">342</set>	
 	<set xpath="/entity_classes/entity_class[@name='zombieSoldierRadiated']/property[@name='ExperienceGain']/@value">1125</set>
