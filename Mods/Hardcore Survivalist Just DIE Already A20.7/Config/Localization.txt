@@ -211,6 +211,7 @@ quest_WhiteRiverCitizen1,Radio Static 1/1
 quest_WhiteRiverCitizen1_description,"Your almost dead radio has picked up some static.\n\nYou realise this must mean there are nearby settlements close by. You're unsure if this could be a good or bad thing. Knowing that you're not alone is giving you feelings of excitement but also fear, but you decide to take the risk..."
 ttItemNeedsRepair,"This item is knackered and needs fixing"
 ttRepairBeforePickup,"It's knackered and needs repairing before picking it up."
+modMeleeSerratedBladeDesc,"100% chance to cause a Bleeding Wound on a regular attack."
 BowRepairKit,Bow Repair Kit
 ClubRepairKit,Club Repair Kit
 HandgunRepairKit,Handgun Repair Kit
