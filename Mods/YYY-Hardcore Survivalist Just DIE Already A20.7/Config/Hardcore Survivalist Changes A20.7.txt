@@ -1,0 +1,82 @@
+
+
+
+You start with an Incurable Infection.
+Stage 2 Infection begins at 30%, stage 3 at 65%.
+Tree stumps always drop honey.
+Honey treats 3% Infection, Herbal Antibiotics treats 8%, Blue Antibiotics treats 20%.
+You retain all debuffs upon death.
+Dying from infection is gameover!
+Airdrops contain one Mineral Water, one Steak and Potato and one Trauma Kit. With a small chance of beaker.
+Added small chance of feral day spawns
+Added small chance of radiated night spawns
+Added zombie variety in the snow biome.
+Increased zombies spawns during horde nights (+20%).
+Increased amount of wild spawned zombies.
+Cleared areas will respawn zombies faster.
+Added recipes to dismantle regular ammo.
+Increased zombie loot despawn time by 10 mins.
+Doubled animal corpse despawn time from 5 to 10 minutes.
+Greatly lowered harvest quantity on salvaging.
+Greatly lowered butcher amount on animals.
+Increased entity health by 20%.
+Greatly lowered ammo quantity in loot.
+Increased Tier 2 (iron) melee tool/weapon damage by 20% (excludes sledge and fists).
+Added snowberry farming, which can be cooked into snowberry juice.
+Increased vending machine prices to 200%.
+Player sell price to traders reduced from 20% to 10%.
+Trader sell price to players increased from 300% to 500%.
+Dyes can be sold for 20 dukes each.
+Corn bread/cob and baked potato unlocked without Master Chef.
+Lowered quest reward quantity by ~50%.
+Bullet proof glass repairs with broken glass.
+Added painkiller to First Aid kit x2, First Aid kit cures concussion.
+Lowered huntsman perk to 1 rank. Increases butcher by 34%.
+Added diamond blade trap. Lasts 2.5x longer, deals 40% more dmg.
+Buffed serrated blade, 100% bleed chance.
+Chainsaw can use serrated blade.
+Machete can use weighted head.
+Reenabled Blessed Metal mod, rare loot, increases base damage to zombies by 15%.
+Increased stack size of cobble/concrete to 1200.
+Added bucket of water to concrete mix recipe (300).
+Added starting Primitive Quality 4 weapon and 1 related perk point from love letter.
+Fresh food removed from loot.
+Premade drinks removed from loot, including boiled water.
+Lowered chance of corn harvest from wild crop (75% chance of getting 1 corn).
+Rebalanced quest rewards so they aren't so over powered.
+Bird nests (Waiting for a chicken) respawn loot after 15 real hours.
+Added super corn meal and bread, added to tier 4 recipe ingredients.
+Lower casino coin rewards from quests by 25%.
+Doubled casino coin bonus from daring adventurer.
+Increased stick chance for iron arrows/bolts and steel arrows/bolts. 60% for iron, 70% for steel.
+Increased impact damage for flaming arrows/bolts.
+Increased inventory size to 50 slots, added 1 extra crafting queue slot.
+Lowered starting carry from 27 to 20.
+Each rank of Pack Mule gives 5 carry capacity.
+Vending machines restock every 30 days.
+Traders restock every 7 days.
+Get 1 less weapon/tool part from scrapping.
+Items that require their own parts to craft will need their own repair kit, whichs will use 1 part of their type.
+Added a second seat for the gyrocopter.
+Slightly increased storage size of vehicles. Except 4x4.
+Removed most of the boar spawns in Grace's mansion.
+Grace gives rotting flesh instead of raw meat.
+POI farm plots can no longer be used, except for snowberries and mushrooms.
+Living off the land no longer increases crop yield, only lowers farm plot cost and unlocks seeds recipes.
+Harvesting player crops downgrades plants to seedling.
+Removed Sexual Tyrannasaurus and added the effect into the individual melee perks.
+Replaced Charismatic Nature perk with Survival Instinct, which targets self.
+Each point in Survival Instinct increase max Health/Stamina, Entity/Block damage, XP gain and carry capacity.
+Added Trauma Kit, a cure all item, but super rare. Can also be crafted.
+Increase Pipe Baton attack speed from 38/minute to 48/minute.
+Increased Stun Baton damage from 11.8 to 15
+Power attacks don't pause stamina regen.
+Glass Jars can no longer be crafted.
+Food items that require water to craft will refund jar on consumption.
+Cooked canned food has a 3% chance of dysentery. Uncooked is 10% and no healing.
+Boiled water has a 5% chance of dysentery.
+New Tier 3 recipes for chicken rations and miso
+A lot of recipes have increased costs.
+Chickens have a 10% chance of giving an egg when butchered.
+There IS a cure for your infection, but you're gonna need to find it!
+"Master Mode" is an optional addition for making the game even more difficult to stay alive.
