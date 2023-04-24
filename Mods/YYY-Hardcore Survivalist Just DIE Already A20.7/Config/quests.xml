@@ -1,0 +1,235 @@
+<configs>
+	<!--12 quests per quest tier-->
+	<setattribute xpath="/quests" name="quests_per_tier">12</setattribute>
+	
+	<!--favourite weapon from love letter-->
+	
+	<insertAfter xpath="/quests/quest[@id='quest_BasicSurvival8']">
+	<quest id="quest_WeaponSpear">
+		<property name="name" value="Your Stone Spear"/>
+		<property name="subtitle" value="Quality 4 Stone Spear"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_spear"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnSpearT0StoneSpear" value="4"/>
+		<reward type="Item" id="Javelin Master Training" value="1"/>
+	</quest>
+
+	<quest id="quest_WeaponClub">
+		<property name="name" value="Your Wooden Club"/>
+		<property name="subtitle" value="Quality 4 Wooden Club"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_stunned"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnClubT0WoodenClub" value="4"/>
+		<reward type="Item" id="Pummel Pete Training" value="1"/>
+	</quest>
+
+	<quest id="quest_WeaponSledge">
+		<property name="name" value="Your Stone Sledge"/>
+		<property name="subtitle" value="Quality 4 Stone Sledge"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_sledge"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnSledgeT0StoneSledgehammer" value="4"/>
+		<reward type="Item" id="Skull Crusher Training" value="1"/>
+	</quest>
+
+	<quest id="quest_WeaponKnuckle">
+		<property name="name" value="Your Leather Wraps"/>
+		<property name="subtitle" value="Quality 4 Knuckle Wraps"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_boxer"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnKnucklesT0LeatherKnuckles" value="4"/>
+		<reward type="Item" id="Brawler Training" value="1"/>
+	</quest>
+
+	<quest id="quest_WeaponKnife">
+		<property name="name" value="Your Bone Knife"/>
+		<property name="subtitle" value="Quality 4 Bone Knife"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_knife"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnBladeT0BoneKnife" value="4"/>
+		<reward type="Item" id="Deep Cuts Training" value="1"/>
+	</quest>
+
+	<quest id="quest_WeaponBow">
+		<property name="name" value="Your Primitive Bow"/>
+		<property name="subtitle" value="Quality 4 Primitive Bow"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_archery"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="gunBowT0PrimitiveBow" value="4"/>
+		<reward type="Item" id="ammoArrowIron" value="30"/>
+		<reward type="Item" id="Archery Training" value="1"/>
+	</quest>
+
+	<quest id="quest_WeaponBaton">
+		<property name="name" value="Your Pipe Baton"/>
+		<property name="subtitle" value="Quality 4 Pipe Baton"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_stunned"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnBatonT0PipeBaton" value="4"/>
+		<reward type="Item" id="Electrocutioner Training" value="1"/>
+	</quest>
+	</insertAfter>
+	
+	<!--replaces craft/wear clothing to craft/plant snowberries-->
+	<remove xpath="//quest[@id='quest_BasicSurvival3']//objective[@type='FetchKeep']"/>
+	<insertAfter xpath="//quest[@id='quest_BasicSurvival3']//property[@name='shareable']">
+	<objective type="FetchKeep" id="resourceCropSnowberryPlant" value="4" phase="1">
+	<modifier type="TrackBlocks">
+		<property name="block_index_name" value="quest_snowberries"/>
+		<property name="nav_object" value="quest_resource"/>
+		<property name="track_distance" value="30"/>
+	</modifier>
+	</objective>
+	</insertAfter>
+	<setattribute xpath="//quest[@id='quest_BasicSurvival3']//objective[2]" name="id">plantedSnowberry1</setattribute>
+	<setattribute xpath="//quest[@id='quest_BasicSurvival3']//objective[2]" name="value">1</setattribute>
+	<setattribute xpath="//quest[@id='quest_BasicSurvival3']//property[@name='icon']" name="value">ui_game_symbol_tree</setattribute>
+	<remove xpath="//quest[@id='quest_BasicSurvival3']//objective[@id='apparelPlantFiberShirt']"/>
+	
+	
+	<setattribute xpath="//quest[@id='quest_BasicSurvival4']//objective[1]" name="type">BlockPlace</setattribute>
+	<setattribute xpath="//quest[@id='quest_BasicSurvival4']//objective[1]" name="id">plantedSnowberry1</setattribute>
+	<setattribute xpath="//quest[@id='quest_BasicSurvival4']//objective[1]" name="value">1</setattribute>
+	<setattribute xpath="//quest[@id='quest_BasicSurvival4']//property[@name='icon']" name="value">ui_game_symbol_tree</setattribute>
+	<remove xpath="//quest[@id='quest_BasicSurvival4']//objective[@id='apparelPlantFiberShirt']"/>
+	
+	<!--removes Pine Forest biome filter-->	
+	<remove xpath="/quests/quest[@id='quest_whiteRiverCitizen1']/objective[1]//property[@name='biome_filter_type']"/>		
+	<remove xpath="/quests/quest[@id='quest_whiteRiverCitizen1']/objective[1]//property[@name='biome_filter']"/>		
+	
+	<!--removes "stay within" requirement from quests-->	
+	<remove xpath="/quests/quest[@id='tier1_fetch']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier2_fetch']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier3_fetch']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier4_fetch']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier5_fetch']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier6_fetch']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier1_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier2_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier3_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier4_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier5_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier6_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier2_restore_power']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier3_restore_power']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier2_fetch_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier3_fetch_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier4_fetch_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier4_restore_power']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier5_fetch_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier6_fetch_clear']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier1_buried_supplies']//objective[@type='StayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier2_buried_supplies']//objective[@type='StayWithin']"/>
+	<remove xpath="/quests/quest[@id='tier3_buried_supplies']//objective[@type='StayWithin']"/>
+	<remove xpath="/quests/quest[@id='test_sleepers']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='test_fetch']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='test_fetchsleep']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='test_hiddensleep']//objective[@type='POIStayWithin']"/>
+	<remove xpath="/quests/quest[@id='test_restorepower']//objective[@type='POIStayWithin']"/>
+	
+	<!--Quest Dukes & rewards-->	
+	<set xpath="/quests/quest[@id='tier1_fetch']//reward[2]/@value">250</set>
+	<set xpath="/quests/quest[@id='tier2_fetch']//reward[2]/@value">420</set>
+	<set xpath="/quests/quest[@id='tier3_fetch']//reward[2]/@value">600</set>
+	<set xpath="/quests/quest[@id='tier4_fetch']//reward[2]/@value">765</set>
+	<set xpath="/quests/quest[@id='tier5_fetch']//reward[2]/@value">1530</set>
+	<set xpath="/quests/quest[@id='tier6_fetch']//reward[2]/@value">4500</set>
+	
+	<remove xpath="/quests/quest[@id='tier4_fetch']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier4_fetch']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier4_fetch']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+	<remove xpath="/quests/quest[@id='tier5_fetch']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier5_fetch']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier5_fetch']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+	<remove xpath="/quests/quest[@id='tier6_fetch']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier6_fetch']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier6_fetch']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+	
+	<set xpath="/quests/quest[@id='tier1_clear']//reward[2]/@value">600</set>
+	<set xpath="/quests/quest[@id='tier2_clear']//reward[2]/@value">1015</set>
+	<set xpath="/quests/quest[@id='tier3_clear']//reward[2]/@value">1350</set>
+	<set xpath="/quests/quest[@id='tier4_clear']//reward[2]/@value">1530</set>
+	<set xpath="/quests/quest[@id='tier5_clear']//reward[2]/@value">3060</set>
+	<set xpath="/quests/quest[@id='tier6_clear']//reward[2]/@value">5400</set>
+	
+	<remove xpath="/quests/quest[@id='tier4_clear']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier4_clear']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier4_clear']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+	<remove xpath="/quests/quest[@id='tier5_clear']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier5_clear']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier5_clear']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+	<remove xpath="/quests/quest[@id='tier6_clear']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier6_clear']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier6_clear']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+	
+	<set xpath="/quests/quest[@id='tier2_restore_power']//reward[2]/@value">1050</set>
+	<set xpath="/quests/quest[@id='tier3_restore_power']//reward[2]/@value">1500</set>
+	<set xpath="/quests/quest[@id='tier4_restore_power']//reward[2]/@value">1725</set>
+	
+	<set xpath="/quests/quest[@id='tier2_fetch_clear']//reward[2]/@value">1050</set>
+	<set xpath="/quests/quest[@id='tier3_fetch_clear']//reward[2]/@value">1500</set>
+	<set xpath="/quests/quest[@id='tier4_fetch_clear']//reward[2]/@value">1725</set>
+	<set xpath="/quests/quest[@id='tier5_fetch_clear']//reward[2]/@value">3450</set>
+	<set xpath="/quests/quest[@id='tier6_fetch_clear']//reward[2]/@value">6000</set>	
+	
+	<remove xpath="/quests/quest[@id='tier4_fetch_clear']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier4_fetch_clear']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier4_fetch_clear']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+	<remove xpath="/quests/quest[@id='tier5_fetch_clear']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier5_fetch_clear']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier5_fetch_clear']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+	<remove xpath="/quests/quest[@id='tier6_fetch_clear']//reward[@type='LootItem'][@id='groupQuestAmmo']"/>
+	<remove xpath="/quests/quest[@id='tier6_fetch_clear']//reward[@type='LootItem'][@id='groupQuestSchematics']"/>
+	<remove xpath="/quests/quest[@id='tier6_fetch_clear']//reward[@type='LootItem'][@id='groupQuestMods']"/>
+		
+	<set xpath="/quests/quest[@id='tier1_buried_supplies']//reward[2]/@value">420</set>
+	<set xpath="/quests/quest[@id='tier2_buried_supplies']//reward[2]/@value">705</set>
+	<set xpath="/quests/quest[@id='tier3_buried_supplies']//reward[2]/@value">990</set>
+	
+	<set xpath="/quests/quest[@id='test_sleepers']//reward[2]/@value">265</set>
+	<set xpath="/quests/quest[@id='test_fetch']//reward[2]/@value">265</set>
+	
+	<set xpath="/quests/quest[@id='quest_tier2complete']//reward[1]/@value">2500</set>
+	<set xpath="/quests/quest[@id='quest_tier3complete']//reward[1]/@value">3000</set>
+	<set xpath="/quests/quest[@id='quest_tier4complete']//reward[1]/@value">3500</set>
+	<set xpath="/quests/quest[@id='quest_tier5complete']//reward[1]/@value">4000</set>
+	
+	<setattribute xpath="/quests/quest[@id='quest_tier5complete']//property[@name='completion_key'][@value='quest_tier5_complete_completion']" name="value">quest_tier_complete_completion</setattribute> 
+			
+</configs>
+
