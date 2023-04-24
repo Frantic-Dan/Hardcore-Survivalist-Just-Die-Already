@@ -1,0 +1,362 @@
+<configs>
+	
+	<!--newbie coat removed at level 1-->
+	
+	<set xpath="/buffs/buff[@name='buffNewbieCoat']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate']/requirement[@name='PlayerLevel']/@value">0</set>
+
+	<set xpath="/buffs/buff[@name='buffNearDeathRegen']/effect_group/triggered_effect[@action='RemoveAllNegativeBuffs']/requirement[@name='PlayerLevel']/@value">1</set>
+	<set xpath="/buffs/buff[@name='buffNearDeathRegen']/effect_group/triggered_effect[@action='RemoveBuff']/requirement[@name='PlayerLevel']/@value">1</set>
+
+	<remove xpath="/buffs/buff[@name='buffNearDeathRegen']/effect_group/passive_effect[@name='HealthChangeOT']"/> <!-- You may want this too?? -->
+	<remove xpath="/buffs/buff[@name='buffNearDeathRegen']/effect_group/passive_effect[@name='WaterChangeOT']"/> <!-- You may want this too?? -->
+
+	<remove xpath="/buffs/buff[@name='buffNearDeathProtection']/effect_group/passive_effect[@name='BuffResistance']"/> <!-- Removes invisible buff section that gives resistance to negative buffs -->
+
+
+	
+	
+	<!--additional buffs for top tier food-->
+	<insertAfter xpath="/buffs/buff[@name='god']/effect_group/triggered_effect[@trigger='onSelfBuffStart'][@action='ModifyCVar'][@cvar='$buffShamChowderDuration'][@operation='set'][@value='0']">
+		<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffGumboStewDuration" operation="set" value="0"/>
+		<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffShepardsPieDuration" operation="set" value="0"/>
+		<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffSpaghettiDuration" operation="set" value="0"/>
+		<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffTunaFishGravyToastDuration" operation="set" value="0"/>
+	</insertAfter>
+	
+	<!--food/drink adjustments-->
+	<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@buff='buffStatusHungry01']/requirement[@stat='Food']/@value">.6</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@buff='buffStatusHungry02']/requirement[@stat='Food']/@value">.3</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@buff='buffStatusHungry03']/requirement[@stat='Food']/@value">.1</set>
+	
+	<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@buff='buffStatusThirsty01']/requirement[@stat='Water']/@value">0.72</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@buff='buffStatusThirsty02']/requirement[@stat='Water']/@value">0.3</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@buff='buffStatusThirsty03']/requirement[@stat='Water']/@value">0.1</set>
+	
+	<set xpath="/buffs/buff[@name='buffStatusThirsty01']/@icon_color">245,245,66</set>
+	<set xpath="/buffs/buff[@name='buffStatusThirsty01']/effect_group[3]//triggered_effect[4]/@value">0</set>
+	
+	<!--changes/additions to single player charismatic nature perk-->
+	<remove xpath="//buff[@name='buffPerkCharismaticNature']"/>
+	
+	<insertAfter xpath="//buff[@name='buffDeadEye']">
+	<buff name="buffPerkCharismaticNature" name_key="perkCharismaticNatureName" description_key="buffPerkCharismaticNatureDesc" icon="ui_game_symbol_talk" icon_color="0,255,0" icon_blink="false" hidden="false">
+		<stack_type value="replace"/>
+		<duration value="10"/>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="1"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="2"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="3"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+			</effect_group>
+		<effect_group>
+			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="4"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="CharismaticNatureLevel" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+	
+	</insertAfter>
+	
+	
+	<!--injuries persist after death -->
+	 
+	<setattribute xpath="/buffs/buff[@name='buffInjuryAbrasion']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInjuryAbrasionTreated']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffLegSprained']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffLegBroken']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffLegSplinted']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffLegCast']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffArmSprained']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffArmBroken']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffArmSplinted']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffArmCast']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffFatigued']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffLaceration']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInjuryConcussion']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffDysentery01Untreated']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffDysentery01GetBetter']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInfectionMain']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInfection01Untreated']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInfection01GetBetter']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInfection02Untreated']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInfection02GetBetter']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInfection03Untreated']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInfection03GetBetter']" name="remove_on_death">false</setattribute>
+	
+	<!--stage 2 infection starts at 30%-->
+	<set xpath="/buffs/buff[@name='buffInfectionMain']/effect_group[1]//triggered_effect[2]/@value">30</set>
+	<set xpath="/buffs/buff[@name='buffInfectionMain']/effect_group//triggered_effect[3]/@value">65</set>
+	
+	<!--makes infection incurable-->
+	<remove xpath="/buffs/buff[@name='buffInfectionMain']//effect_group[@name='shut down']"/>
+	
+	<!--death from infection cures infection-->
+	<!--<insertAfter xpath="/buffs/buff[@name='buffInfection04']/effect_group/triggered_effect [@trigger='onSelfBuffStart']">
+		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection01Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection01GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection02Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection02GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection03Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection04"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfectionMain"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionMain" perc_add=".64"/>
+	</insertAfter>-->
+	
+	<!--immunity from infection after taking "The Cure"-->
+	<append xpath="/buffs">
+        <buff name="infectionImmunity" name_key="infectionImmunity" description_key="infectionImmunityDesc" icon="ui_game_symbol_medical" remove_on_death="false" icon_color="0,255,0">
+		    <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInfectionCatch,buffInfectionMain,buffInfectionGetsWorse,buffInfection01Untreated,buffInfection02Untreated,buffInfection03Untreated,buffInfection04"/>
+            </effect_group>
+        </buff>
+    </append>
+	
+	<!--health loss for sprains/abrasions now 10, not 20/25-->
+	<set xpath="//buff[@name='buffArmSprained']/effect_group[5]//triggered_effect[@trigger='onSelfBuffStart'][@operation='divide']/@value">60</set>
+	<set xpath="//buff[@name='buffArmSprained']/effect_group[5]//triggered_effect[@trigger='onSelfBuffUpdate'][@operation='divide']/@value">60</set>
+	<set xpath="//buff[@name='buffLegSprained']/effect_group[5]//triggered_effect[@trigger='onSelfBuffStart'][@operation='divide']/@value">60</set>
+	<set xpath="//buff[@name='buffLegSprained']/effect_group[5]//triggered_effect[@trigger='onSelfBuffUpdate'][@operation='divide']/@value">60</set>
+	<set xpath="//buff[@name='buffInjuryAbrasion']/effect_group[1]//triggered_effect[@trigger='onSelfBuffStart'][@operation='divide']/@value">720</set>
+	<set xpath="//buff[@name='buffInjuryAbrasion']/effect_group[1]//triggered_effect[@trigger='onSelfBuffUpdate'][@operation='divide']/@value">720</set>
+	<!--remove stamina regen pause on power attack-->	
+	<set xpath="//buff[@name='buffPowerAttackStaminaStunt']/duration/@value">0.01</set>
+
+	<set xpath="/buffs/buff[@name='buffStatusHungry01']/effect_group[2]/requirement[@name='StatComparePercCurrentToMax']/@value">0.62</set>
+	
+	<!--stamina & mobility penalties for hunger-->
+	<insertAfter xpath="/buffs/buff[@name='buffStatusHungry02']/effect_group[1]/passive_effect[@name='BuffBlink'][@tags]">
+		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".1"/>
+		<passive_effect name="Mobility" operation="base_add" value="-.1"/>
+	</insertAfter>
+	
+	<set xpath="/buffs/buff[@name='buffStatusHungry02']/effect_group[1]/triggered_effect[3]/requirement[@name='StatComparePercCurrentToMax']/@value">0.32</set>
+	
+	<insertAfter xpath="/buffs/buff[@name='buffStatusHungry03']/effect_group">
+		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2"/>
+		<passive_effect name="Mobility" operation="base_add" value="-.2"/>
+		<passive_effect name="AttributeLevel" operation="base_subtract" value="1"/>	
+	</insertAfter>
+	
+	<set xpath="/buffs/buff[@name='buffStatusHungry03']/effect_group/triggered_effect[9]/requirement[@name='StatComparePercCurrentToMax']/@value">0.12</set>
+	<set xpath="/buffs/buff[@name='buffStatusThirsty01']/effect_group[2]/requirement[@name='StatComparePercCurrentToMax']/@value">0.74</set>
+	
+	<insertAfter xpath="/buffs/buff[@name='buffStatusThirsty02']/effect_group[1]/passive_effect[@name='BuffBlink'][@tags]">
+		<passive_effect name="Mobility" operation="base_add" value="-.1"/>
+	</insertAfter>
+	
+	<set xpath="/buffs/buff[@name='buffStatusThirsty02']/effect_group[2]/requirement[@name='StatComparePercCurrentToMax']/@value">0.32</set>
+	
+	<insertAfter xpath="/buffs/buff[@name='buffStatusThirsty03']/effect_group[1]//triggered_effect[1][@value]">
+		<passive_effect name="Mobility" operation="base_add" value="-.2"/>
+		<passive_effect name="AttributeLevel" operation="base_subtract" value="1"/>
+	</insertAfter>
+	
+	<set xpath="/buffs/buff[@name='buffStatusThirsty03']/effect_group[2]/requirement[@name='StatComparePercCurrentToMax']/@value">0.12</set>
+	
+	<!--funny sound testing for dysentery-->
+	<insertAfter xpath="//buff[@name='buffDysenteryCatchFood']/effect_group//triggered_effect[4][@buff='buffDysenteryMain']">
+	<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="dysentery_fart" />
+	</insertAfter>
+	
+	<insertAfter xpath="//buff[@name='buffDysenteryCatchDrink']/effect_group//triggered_effect[4][@buff='buffDysenteryMain']">
+	<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="dysentery_fart" />
+	</insertAfter>
+	
+	<insertAfter xpath="//buff[@name='buffDysenteryMain']/effect_group[@name='shut down']//triggered_effect[@buff='buffDysenteryMain']">
+	<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="dysentery_fart">
+		<requirement name="CVarCompare" cvar="$dysenteryCounter" operation="LTE" value="0" />
+		<requirement name="CVarCompare" cvar="$dysenteryCureCounter" operation="LTE" value="0" />
+	</triggered_effect>
+	</insertAfter>
+	
+	<!--encumbrance-->
+	<set xpath="/buffs/buff[@name='buffEncumberedInv']/effect_group//triggered_effect[3]/@value">0.024</set>
+	
+	<!--Yucca Juice Smoothie cools instead of warms-->
+	<set xpath="/buffs/buff[@name='buffYuccaJuiceSmoothie']/effect_group[3]/passive_effect/@name">HyperthermalResist</set>
+	
+	<!--Awesome Sauce decreased effect-->
+	<set xpath="/buffs/buff[@name='buffDrunkGrandpasAwesomeSauce']/effect_group[3]//passive_effect[1]/@value">.1</set>
+	<set xpath="/buffs/buff[@name='buffDrunkGrandpasAwesomeSauce']/effect_group[3]//passive_effect[2]/@value">.1</set>
+	
+	<set xpath="//buff[@name='buffMegaCrush']/effect_group[3]//passive_effect[@name='RunSpeed']/@value">.15</set>
+	
+	<!--additional perks for top tier foods-->
+	<insertAfter xpath="/buffs/buff[@name='buffShamChowder']">
+		<buff name="buffGumboStew" name_key="foodGumboStew" description_key="foodGumboStewDesc" icon="ui_game_symbol_fork">
+			<stack_type value="replace"/><duration value="0"/>
+			<display_value value=".buffGumboStewDisplay"/><display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGumboStewDuration" operation="subtract" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGumboStewDisplay" operation="set" value="@$buffGumboStewDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGumboStewDisplay" operation="divide" value="@$MetabolismDuration"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGumboStew">
+					<requirement name="CVarCompare" cvar="$buffGumboStewDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffGumboStewDisplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffGumboStewDuration" operation="set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffShepardsPie" name_key="foodShepardsPie" description_key="foodShepardsPieDesc" icon="ui_game_symbol_fork">
+			<stack_type value="replace"/><duration value="0"/>
+			<display_value value=".buffShepardsPieDisplay"/><display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffShepardsPieDuration" operation="subtract" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffShepardsPieDisplay" operation="set" value="@$buffShepardsPieDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffShepardsPieDisplay" operation="divide" value="@$MetabolismDuration"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffShepardsPie">
+					<requirement name="CVarCompare" cvar="$buffShepardsPieDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffShepardsPieDisplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffShepardsPieDuration" operation="set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffSpaghetti" name_key="foodSpaghetti" description_key="foodSpaghettiDesc" icon="ui_game_symbol_fork">
+			<stack_type value="replace"/><duration value="0"/>
+			<display_value value=".buffSpaghettiDisplay"/><display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffSpaghettiDuration" operation="subtract" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffSpaghettiDisplay" operation="set" value="@$buffSpaghettiDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffSpaghettiDisplay" operation="divide" value="@$MetabolismDuration"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSpaghetti">
+					<requirement name="CVarCompare" cvar="$buffSpaghettiDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffSpaghettiDisplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffSpaghettiDuration" operation="set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffTunaFishGravyToast" name_key="foodTunaFishGravyToast" description_key="foodTunaFishGravyToastDesc" icon="ui_game_symbol_fork">
+			<stack_type value="replace"/><duration value="0"/>
+			<display_value value=".buffTunaFishGravyToastDisplay"/><display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffTunaFishGravyToastDuration" operation="subtract" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffTunaFishGravyToastDisplay" operation="set" value="@$buffTunaFishGravyToastDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffTunaFishGravyToastDisplay" operation="divide" value="@$MetabolismDuration"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffTunaFishGravyToast">
+					<requirement name="CVarCompare" cvar="$buffTunaFishGravyToastDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffTunaFishGravyToastDisplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffTunaFishGravyToastDuration" operation="set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="AttributeLevel" tags="attPerception" operation="base_add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			</effect_group>
+		</buff>	
+	</insertAfter>
+	
+	<!--Hackers candy nerf-->
+	<removeattribute xpath="/buffs/buff[@name='buffDrugHackers']/effect_group[3]//passive_effect[1]/@tags">salvageHarvest</removeattribute>
+	<set xpath="/buffs/buff[@name='buffDrugHackers']/effect_group[3]//passive_effect[2]/@value">0.01</set>
+	
+	<!--Rockbusters nerf-->
+	<set xpath="/buffs/buff[@name='buffDrugRockBusters']/effect_group[3]//passive_effect[1]/@value">.25</set>
+	<set xpath="/buffs/buff[@name='buffDrugRockBusters']/effect_group[3]//passive_effect[2]/@value">.01</set>
+	
+	<!--SugarButts nerf-->
+	<set xpath="/buffs/buff[@name='buffDrugSugarButts']/effect_group[3]//passive_effect[1]/@value">0.05</set>
+	<set xpath="/buffs/buff[@name='buffDrugSugarButts']/effect_group[3]//passive_effect[2]/@value">0.05</set>
+	
+	<!--Harvesting XP-->
+	<set xpath="/buffs/buff[@name='buffHarvestXPBalance']/effect_group/passive_effect[@name='PlayerExpGain']/@value">0.01</set>
+	
+	<set xpath="//buff[@name='buffDrugFortBites']/effect_group[3]//passive_effect[@name='GeneralDamageResist']/@value">0.25</set>
+	
+	<append xpath="/buffs">
+	<buff name="dysentery_fart" name_key="TwitchBuff_NoStealth" description_key="TwitchBuff_NoStealthDesc" >
+		<stack_type value="ignore"/>
+		<duration value="0"/>
+
+		<effect_group>			
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="dysentery_fart" play_in_head="true"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="dysentery_fart" play_in_head="true"/>		
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,10" operation="LTE" value="0.6"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="dysentery_fart"/>
+			
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="dysentery_fartTimer"/>
+			<requirement name="HasBuff" buff="dysentery_fart"/>
+		</effect_group>
+	</buff>
+
+	<buff name="dysentery_fartTimer" icon="ui_game_symbol_twitch_no_stealth" icon_color="255,175,175" hidden="true">
+		<stack_type value="ignore"/>
+		<duration value="0"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="dysentery_fart" play_in_head="true"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="next_dysentery_fart" operation="set" value="randomint(5,8)"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="next_dysentery_fart" operation="add" value="-1"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar="next_dysentery_fart" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="next_dysentery_fart" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="dysentery_fartTimer"/>
+		</effect_group>
+	</buff>
+	</append>	
+</configs>
