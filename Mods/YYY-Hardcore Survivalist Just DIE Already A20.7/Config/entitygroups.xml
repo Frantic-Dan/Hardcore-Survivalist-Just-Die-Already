@@ -1,0 +1,325 @@
+<configs>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombiesAll']//entity[@name='zombieSteveCrawler']"/>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombiesNight']//entity[@name='zombieSteveCrawler']"/>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNightNoBears']//entity[@name='zombieSteveCrawler']"/>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']//entity[@name='zombieSteveCrawler']"/>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight2']//entity[@name='zombieSteveCrawler']"/>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight2NoBears']//entity[@name='zombieSteveCrawler']"/>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombiesHoard']//entity[@name='zombieSteveCrawler']"/>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombiesCave']//entity[@name='zombieSteveCrawler']"/>
+	<remove xpath="/entitygroups/entitygroup[@name='ZombieGhostTownGroup']//entity[@name='zombieSteveCrawler']"/>
+	<setattribute xpath="/entitygroups/entitygroup[starts-with(@name,'sleeperHordeStage')]//entity[(@name='zombieSteveCrawler') and not (@name='zombieSteveCrawlerFeral')]" name="name">Steve Crawler</setattribute>
+	<setattribute xpath="/entitygroups/entitygroup[starts-with(@name,'ZombieGhostTownGroup')]//entity[(@name='zombieSteveCrawler') and not (@name='zombieSteveCrawlerFeral')]" name="name">Steve Crawler</setattribute>
+	
+	<!--mod specific zombie group-->
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesAll']//entity[@name='zombieNurse']">
+		<entity name="Steve Crawler" prob="0.1"/>
+		<entity name="Boe Crawler" prob="0.1"/>
+		<entity name="Joe Crawler" prob="0.1"/>
+		<entity name="Janitor Crawler" prob="0.1"/>
+		<entity name="Arlene Crawler" prob="0.1"/>
+		<entity name="Lab Worker Crawler" prob="0.1"/>
+		<entity name="Darlene Crawler" prob="0.1"/>
+		<entity name="Marlene Crawler" prob="0.1"/>
+		<entity name="Yo Crawler" prob="0.1"/>
+		<entity name="Business Man Crawler" prob="0.1"/>
+		<entity name="Burnt Crawler" prob="0.1"/>
+		<entity name="Nurse Crawler" prob="0.1"/>
+		<entity name="Hazmat Crawler" prob="0.1"/>
+		<entity name="Skateboarder Crawler" prob="0.1"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesNight']//entity[@name='animalZombieDog']">
+		<entity name="Steve Crawler" prob="0.1"/>
+		<entity name="Boe Crawler" prob="0.1"/>
+		<entity name="Joe Crawler" prob="0.1"/>
+		<entity name="Janitor Crawler" prob="0.1"/>
+		<entity name="Arlene Crawler" prob="0.1"/>
+		<entity name="Lab Worker Crawler" prob="0.1"/>
+		<entity name="Darlene Crawler" prob="0.1"/>
+		<entity name="Marlene Crawler" prob="0.1"/>
+		<entity name="Yo Crawler" prob="0.1"/>
+		<entity name="Business Man Crawler" prob="0.1"/>
+		<entity name="Burnt Crawler" prob="0.1"/>
+		<entity name="Nurse Crawler" prob="0.1"/>
+		<entity name="Hazmat Crawler" prob="0.1"/>
+		<entity name="Skateboarder Crawler" prob="0.1"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNightNoBears']//entity[@name='animalZombieDog']">
+		<entity name="Steve Crawler" prob="0.1"/>
+		<entity name="Boe Crawler" prob="0.1"/>
+		<entity name="Joe Crawler" prob="0.1"/>
+		<entity name="Janitor Crawler" prob="0.1"/>
+		<entity name="Arlene Crawler" prob="0.1"/>
+		<entity name="Lab Worker Crawler" prob="0.1"/>
+		<entity name="Darlene Crawler" prob="0.1"/>
+		<entity name="Marlene Crawler" prob="0.1"/>
+		<entity name="Yo Crawler" prob="0.1"/>
+		<entity name="Business Man Crawler" prob="0.1"/>
+		<entity name="Burnt Crawler" prob="0.1"/>
+		<entity name="Nurse Crawler" prob="0.1"/>
+		<entity name="Hazmat Crawler" prob="0.1"/>
+		<entity name="Skateboarder Crawler" prob="0.1"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']//entity[@name='zombieNurse']">
+		<entity name="Steve Crawler" prob="0.1"/>
+		<entity name="Boe Crawler" prob="0.1"/>
+		<entity name="Joe Crawler" prob="0.1"/>
+		<entity name="Janitor Crawler" prob="0.1"/>
+		<entity name="Arlene Crawler" prob="0.1"/>
+		<entity name="Lab Worker Crawler" prob="0.1"/>
+		<entity name="Darlene Crawler" prob="0.1"/>
+		<entity name="Marlene Crawler" prob="0.1"/>
+		<entity name="Yo Crawler" prob="0.1"/>
+		<entity name="Business Man Crawler" prob="0.1"/>
+		<entity name="Burnt Crawler" prob="0.1"/>
+		<entity name="Nurse Crawler" prob="0.1"/>
+		<entity name="Hazmat Crawler" prob="0.1"/>
+		<entity name="Skateboarder Crawler" prob="0.1"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight2']//entity[@name='zombieNurse']">
+		<entity name="Steve Crawler" prob="0.05"/>
+		<entity name="Boe Crawler" prob="0.05"/>
+		<entity name="Joe Crawler" prob="0.05"/>
+		<entity name="Janitor Crawler" prob="0.05"/>
+		<entity name="Arlene Crawler" prob="0.05"/>
+		<entity name="Lab Worker Crawler" prob="0.05"/>
+		<entity name="Darlene Crawler" prob="0.05"/>
+		<entity name="Marlene Crawler" prob="0.05"/>
+		<entity name="Yo Crawler" prob="0.05"/>
+		<entity name="Business Man Crawler" prob="0.05"/>
+		<entity name="Burnt Crawler" prob="0.05"/>
+		<entity name="Nurse Crawler" prob="0.05"/>
+		<entity name="Hazmat Crawler" prob="0.05"/>
+		<entity name="Skateboarder Crawler" prob="0.05"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight2NoBears']//entity[@name='zombieNurse']">
+		<entity name="Steve Crawler" prob="0.01"/>
+		<entity name="Boe Crawler" prob="0.01"/>
+		<entity name="Joe Crawler" prob="0.01"/>
+		<entity name="Janitor Crawler" prob="0.01"/>
+		<entity name="Arlene Crawler" prob="0.01"/>
+		<entity name="Lab Worker Crawler" prob="0.01"/>
+		<entity name="Darlene Crawler" prob="0.01"/>
+		<entity name="Marlene Crawler" prob="0.01"/>
+		<entity name="Yo Crawler" prob="0.01"/>
+		<entity name="Business Man Crawler" prob="0.01"/>
+		<entity name="Burnt Crawler" prob="0.01"/>
+		<entity name="Nurse Crawler" prob="0.01"/>
+		<entity name="Hazmat Crawler" prob="0.01"/>
+		<entity name="Skateboarder Crawler" prob="0.01"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesCave']//entity[@name='animalBear']">
+		<entity name="Steve Crawler" prob="0.01"/>
+		<entity name="Boe Crawler" prob="0.01"/>
+		<entity name="Joe Crawler" prob="0.01"/>
+		<entity name="Janitor Crawler" prob="0.01"/>
+		<entity name="Arlene Crawler" prob="0.01"/>
+		<entity name="Lab Worker Crawler" prob="0.01"/>
+		<entity name="Darlene Crawler" prob="0.01"/>
+		<entity name="Marlene Crawler" prob="0.01"/>
+		<entity name="Yo Crawler" prob="0.01"/>
+		<entity name="Business Man Crawler" prob="0.01"/>
+		<entity name="Burnt Crawler" prob="0.01"/>
+		<entity name="Nurse Crawler" prob="0.01"/>
+		<entity name="Hazmat Crawler" prob="0.01"/>
+		<entity name="Skateboarder Crawler" prob="0.01"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesHoard']//entity[@name='zombieNurse']">
+		<entity name="Steve Crawler" prob="0.01"/>
+		<entity name="Boe Crawler" prob="0.01"/>
+		<entity name="Joe Crawler" prob="0.01"/>
+		<entity name="Janitor Crawler" prob="0.01"/>
+		<entity name="Arlene Crawler" prob="0.01"/>
+		<entity name="Lab Worker Crawler" prob="0.01"/>
+		<entity name="Darlene Crawler" prob="0.01"/>
+		<entity name="Marlene Crawler" prob="0.01"/>
+		<entity name="Yo Crawler" prob="0.01"/>
+		<entity name="Business Man Crawler" prob="0.01"/>
+		<entity name="Burnt Crawler" prob="0.01"/>
+		<entity name="Nurse Crawler" prob="0.01"/>
+		<entity name="Hazmat Crawler" prob="0.01"/>
+		<entity name="Skateboarder Crawler" prob="0.01"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombieGhostTownGroup']//entity[@name='zombieSteve']">
+		<entity name="Steve Crawler" prob="0.1"/>
+		<entity name="Boe Crawler" prob="0.1"/>
+		<entity name="Joe Crawler" prob="0.1"/>
+		<entity name="Janitor Crawler" prob="0.1"/>
+		<entity name="Arlene Crawler" prob="0.1"/>
+		<entity name="Lab Worker Crawler" prob="0.1"/>
+		<entity name="Darlene Crawler" prob="0.1"/>
+		<entity name="Marlene Crawler" prob="0.1"/>
+		<entity name="Yo Crawler" prob="0.1"/>
+		<entity name="Business Man Crawler" prob="0.1"/>
+		<entity name="Burnt Crawler" prob="0.1"/>
+		<entity name="Nurse Crawler" prob="0.1"/>
+		<entity name="Hazmat Crawler" prob="0.1"/>
+		<entity name="Skateboarder Crawler" prob="0.1"/>
+	</insertAfter>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
+	<entitygroup name="SnowBiomeDIEmod">
+		<entity name="zombieLumberjack" prob="2.5"/>
+		<entity name="zombieFatHawaiian" prob="0.4"/>
+		<entity name="zombieMoe" prob="0.4"/>
+		<entity name="zombieFemaleFat" prob="0.4"/>
+		<entity name="zombieBoeFeral" prob="0.2"/>
+		<entity name="zombieJoeFeral" prob="0.2"/>
+		<entity name="zombieSteveFeral" prob="0.2"/>
+		<entity name="zombieYoFeral" prob="0.2"/>
+		<entity name="zombieBusinessManFeral" prob="0.2"/>
+		<entity name="zombieArleneFeral" prob="0.2"/>
+		<entity name="zombieDarleneFeral" prob="0.2"/>
+		<entity name="zombieMarleneFeral" prob="0.2"/>
+		<entity name="zombieNurseFeral" prob="0.2"/>
+		<entity name="zombieSoldier" prob="0.2"/>
+		<entity name="zombieSkateboarderFeral" prob="0.2"/>
+		<entity name="zombieJanitorFeral" prob="0.2"/>
+		<entity name="zombieFatCop" prob="0.2"/>
+		<entity name="animalZombieDog" prob="0.05"/>
+		<entity name="zombieWightFeral" prob="0.05"/>
+	</entitygroup>
+	</insertAfter>
+	<!--adds a small chance of feral zombies-->
+	<append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
+		<entity name="zombieBoeFeral" prob=".05"/>
+		<entity name="zombieJoeFeral" prob=".05"/>
+		<entity name="zombieSteveFeral" prob=".05"/>
+		<entity name="zombieYoFeral" prob=".05"/>
+		<entity name="zombieBusinessManFeral" prob=".05"/>
+		<entity name="zombieArleneFeral" prob=".05"/>
+		<entity name="zombieDarleneFeral" prob=".05"/>
+		<entity name="zombieMarleneFeral" prob=".05"/>
+		<entity name="zombieSkateboarderFeral" prob="0.05"/>
+		<entity name="zombieNurseFeral" prob=".05"/>
+		<entity name="zombieFemaleFat" prob="0.3"/>
+		<entity name="zombieSpiderFeral" prob=".05"/>
+		<entity name="zombieMoeFeral" prob=".05"/>
+		<entity name="zombiePartyGirlFeral" prob=".05" />		
+	</append>
+	<!--adds a small chance of feral/radiated zombies-->
+	<append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
+		<entity name="zombieBoeRadiated" prob="0.05"/>
+		<entity name="zombieMoeRadiated" prob="0.05"/>
+		<entity name="zombieJoeRadiated" prob="0.05"/>
+		<entity name="zombieSteveRadiated" prob="0.05"/>
+		<entity name="zombieYoRadiated" prob="0.05"/>
+		<entity name="zombieArleneRadiated" prob="0.05"/>
+		<entity name="zombieDarleneRadiated" prob="0.05"/>
+		<entity name="zombieMarleneRadiated" prob="0.05"/>
+		<entity name="zombieWightFeral" prob="0.05"/>
+		<entity name="zombieSoldier" prob="0.25"/>
+		<entity name="zombieSkateboarder" prob="1"/>
+		<entity name="zombieSkateboarderFeral" prob="0.25"/>
+		<entity name="zombieSkateboarderRadiated" prob="0.05"/>
+		<entity name="zombieJanitor" prob="0.5"/>
+		<entity name="zombieJanitorFeral" prob="0.2"/>
+		<entity name="zombieJanitorRadiated" prob="0.05"/>
+		<entity name="zombieFatCop" prob="0.2"/>
+		<entity name="zombieBusinessManRadiated" prob="0.05"/>	
+		<entity name="zombiePartyGirlRadiated" prob="0.05"/>
+	</append>
+	<!--adds a small chance of dogs in the Burnt Forest-->
+	<append xpath="/entitygroups/entitygroup[@name='ZombiesBurntForest']">
+		<entity name="animalZombieDog" prob="0.05"/>
+	</append>
+	
+	<!--adds 2 more screamer variants-->
+	<append xpath="/entitygroups/entitygroup[@name='ZombieScouts']">
+		<entity name="zombieSpittingSpiderScreamer"/>
+		<entity name="zombieBoeSpiderScreamer"/>
+	</append>
+	
+	<insertAfter xpath="/entitygroups/entitygroup[@name='zombieScreamerRadiated']">
+	<entitygroup name="zombieSpittingSpiderScreamerFeral">
+		<entity name="zombieSpittingSpiderScreamerFeral" />
+	</entitygroup>
+	
+	<entitygroup name="zombieSpittingSpiderScreamerRadiated">
+		<entity name="zombieSpittingSpiderScreamerRadiated" />
+	</entitygroup>
+	
+	<entitygroup name="zombieBoeSpiderScreamerFeral">
+		<entity name="zombieBoeSpiderScreamerFeral" />
+	</entitygroup>
+	
+	<entitygroup name="zombieBoeSpiderScreamerRadiated">
+		<entity name="zombieBoeSpiderScreamerRadiated" />
+	</entitygroup>
+	</insertAfter>
+	
+	<append xpath="/entitygroups">
+		<entitygroup name="ZombiesCrawlers">
+			<entity name="Steve Crawler"/>
+			<entity name="Boe Crawler"/>
+			<entity name="Joe Crawler"/>
+			<entity name="Janitor Crawler"/>
+			<entity name="Arlene Crawler"/>
+			<entity name="Lab Worker Crawler"/>
+			<entity name="Darlene Crawler"/>
+			<entity name="Marlene Crawler"/>
+			<entity name="Yo Crawler"/>
+			<entity name="Business Man Crawler"/>
+			<entity name="Burnt Crawler"/>
+			<entity name="Nurse Crawler"/>
+			<entity name="Hazmat Crawler"/>
+			<entity name="Skateboarder Crawler"/>
+		</entitygroup>
+
+		<entitygroup name="ZombieCrimson">
+			<entity name="Crimson Head"/>
+		</entitygroup>
+
+		<entitygroup name="ZombieFailedTestSubject">
+			<entity name="Failed Test Subject"/>
+		</entitygroup>
+
+		<entitygroup name="ZombiePrototype">
+			<entity name="Crimson Head Prototype"/>
+		</entitygroup>
+
+		<entitygroup name="ZombieTyrant">
+			<entity name="Tyrant"/>
+		</entitygroup>
+
+		<entitygroup name="ZombieSuperTyrant">
+			<entity name="Super Tyrant"/>
+		</entitygroup>
+
+		<entitygroup name="MansionHunterZombies">
+			<entity name="Hunter"/>
+		</entitygroup>
+
+	<!-- Mansion Hunter Sleeper Volume -->
+		<entitygroup name="sleeperMansionHunterStageGS1"><entity name="Hunter"/></entitygroup>
+		<entitygroup name="sleeperMansionHunterStageGS10"><entity name="Hunter"/></entitygroup>
+		<entitygroup name="sleeperMansionHunterStageGS20"><entity name="Hunter"/></entitygroup>
+		<entitygroup name="sleeperMansionHunterStageGS30"><entity name="Hunter"/></entitygroup>
+		<entitygroup name="sleeperMansionHunterStageGS40"><entity name="Hunter"/></entitygroup>
+		<entitygroup name="sleeperMansionHunterStageGS50"><entity name="Hunter"/></entitygroup>
+
+	<!-- Mansion Black Tiger Sleeper Volume -->
+		<entitygroup name="sleeperMansionBlackTigerStageGS1"><entity name="Black Tiger Spider"/></entitygroup>
+		<entitygroup name="sleeperMansionBlackTigerStageGS10"><entity name="Black Tiger Spider"/></entitygroup>
+		<entitygroup name="sleeperMansionBlackTigerStageGS20"><entity name="Black Tiger Spider"/></entitygroup>
+		<entitygroup name="sleeperMansionBlackTigerStageGS30"><entity name="Black Tiger Spider"/></entitygroup>
+		<entitygroup name="sleeperMansionBlackTigerStageGS40"><entity name="Black Tiger Spider"/></entitygroup>
+		<entitygroup name="sleeperMansionBlackTigerStageGS50"><entity name="Black Tiger Spider"/></entitygroup>
+
+	<!-- Plant 42 Sleeper Volume -->
+		<entitygroup name="sleeperPlant42StageGS1"><entity name="Plant 42"/></entitygroup>
+		<entitygroup name="sleeperPlant42StageGS10"><entity name="Plant 42"/></entitygroup>
+		<entitygroup name="sleeperPlant42StageGS20"><entity name="Plant 42"/></entitygroup>
+		<entitygroup name="sleeperPlant42StageGS30"><entity name="Plant 42"/></entitygroup>
+		<entitygroup name="sleeperPlant42StageGS40"><entity name="Plant 42"/></entitygroup>
+		<entitygroup name="sleeperPlant42StageGS50"><entity name="Plant 42"/></entitygroup>
+	</append>
+</configs>
