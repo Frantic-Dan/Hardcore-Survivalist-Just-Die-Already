@@ -5,7 +5,7 @@
 	<append xpath="/item_modifiers/item_modifier[@name='modMeleeSerratedBlade']/@installable_tags">,chainsaw</append>
 	<set xpath="/item_modifiers/item_modifier[@name='modMeleeSerratedBlade']/effect_group[1]//requirement[1]/@value">100</set>
 	<!--weighted head can be added to machetes-->
-	<append xpath="/item_modifiers/item_modifier[@name='modMeleeWeightedHead']/@installable_tags">,machete</append>
+	<set xpath="/item_modifiers/item_modifier[@name='modMeleeWeightedHead']/@blocked_tags">,noMods,knife</set>
 	<!--makes all dye sellable-->
 	<insertAfter xpath="//item_modifier[@name='modDyeWhite']//property[5]">
 	<property name="EconomicValue" value="500"/>
