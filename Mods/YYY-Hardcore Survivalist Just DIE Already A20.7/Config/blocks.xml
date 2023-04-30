@@ -241,6 +241,7 @@
 	<set xpath="/blocks/block[@name='treePlantedWinterPine28m']/drop[@event='Destroy'][@name='treePlantedWinterPine1m']/@count">1</set>
 	<!-- treeStump -->
 	<set xpath="/blocks/block[@name='treeStump']/drop[@event='Harvest'][@name='resourceWood']/@count">12</set>
+	<set xpath="/blocks/block[@name='treeStumpPOI']/drop[@event='Harvest'][@name='resourceWood']/@count">16</set>
 	<set xpath="/blocks/block[@name='treeStump']/drop[@event='Destroy'][@name='foodHoney'][@count='1']/@prob">1</set>
 	
 	<!-- treeBurntMaple01 -->
