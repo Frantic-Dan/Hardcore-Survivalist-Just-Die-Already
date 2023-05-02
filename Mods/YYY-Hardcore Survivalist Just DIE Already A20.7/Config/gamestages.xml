@@ -2,6 +2,7 @@
 	<!--changes to hordes-->
 	<setattribute xpath="/gamestages/config" name="daysAliveChangeWhenKilled">0</setattribute>
 	<setattribute xpath="/gamestages/config" name="difficultyBonus">1.5</setattribute>
+	<setattribute xpath="/gamestages/config" name="lootBonusEvery">10</setattribute>
 	
 	<insertBefore xpath="/gamestages/group[@name='S_-Group_Generic_Zombie']">
 		<group name="S_-Group_MansionHunter_Zombie" emptyChance="0" decoyChance="0" decoy1hpChance="0">
