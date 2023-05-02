@@ -205,7 +205,7 @@
 	</insertAfter>
 	
 	<!--encumbrance-->
-	<set xpath="/buffs/buff[@name='buffEncumberedInv']/effect_group//triggered_effect[3]/@value">0.024</set>
+	<set xpath="/buffs/buff[@name='buffEncumberedInv']/effect_group//triggered_effect[3]/@value">0.02</set>
 	
 	<!--Yucca Juice Smoothie cools instead of warms-->
 	<set xpath="/buffs/buff[@name='buffYuccaJuiceSmoothie']/effect_group[3]/passive_effect/@name">HyperthermalResist</set>
