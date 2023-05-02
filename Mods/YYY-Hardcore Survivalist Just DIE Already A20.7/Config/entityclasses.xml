@@ -11,6 +11,15 @@
 	<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="Backpack"/>
 	<property name="ExperienceGain" value="650"/>
 	</append>
+	<!--zero XP from bloodmoon zombie kills-->
+	<append xpath="entity_classes/entity_class[@name='playerMale']">
+	<effect_group>
+        <passive_effect name="PlayerExpGain" operation="perc_subtract" value="0.5" tags="Kill">
+            <requirement name="IsBloodMoon"/>
+        </passive_effect>
+	</effect_group>
+	</append>
+	
 	<!--start with infection-->
 	<remove xpath="/entity_classes/entity_class[@name='playerMale']//property[@name='Buffs']"/>
 	<insertAfter xpath="/entity_classes/entity_class[@name='playerMale']//property[@name='ChestExplosionDamageMultiplier']">
@@ -20,7 +29,7 @@
 	<!--backpack size & unencumbered carrying capacity-->
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CarryCapacity']/@value">20</set>
 	<set xpath="/entity_classes/entity_class/effect_group/passive_effect[@name='BagSize']/@value">50</set>
-	<set xpath="/entity_classes/entity_class/effect_group/passive_effect[@name='PlayerExpGain']/@value">4</set>
+	<set xpath="/entity_classes/entity_class/effect_group/passive_effect[@name='PlayerExpGain'][@tags='Upgrading']/@value">4</set>
 	
 	<set xpath="/entity_classes/entity_class/effect_group/triggered_effect[@trigger='onSelfRespawn'] [@action='AddBuff'] [@target='self']/@buff">buffStatusCheck01,buffStatusCheck02,buffPerkAbilityUpdate,buffNearDeathTraumaTrigger</set>
 	<!--XP penalties after death-->
@@ -31,6 +40,7 @@
 	<!-- ZOMBIES -->
 	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/effect_group[@name='Base Effects']//passive_effect[@operation='perc_add']/@value">-0.05,.05</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='ExperienceGain']/@value">310</set>
+	
 	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax'][@operation='base_set']/@value">180</set>
 	
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='ExperienceGain']/@value">900</set>
