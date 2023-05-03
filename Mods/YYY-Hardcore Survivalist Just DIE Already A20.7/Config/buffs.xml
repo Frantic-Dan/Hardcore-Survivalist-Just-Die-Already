@@ -124,16 +124,17 @@
 	<remove xpath="/buffs/buff[@name='buffInfectionMain']//effect_group[@name='shut down']"/>
 	
 	<!--death from infection cures infection-->
-	<!--<insertAfter xpath="/buffs/buff[@name='buffInfection04']/effect_group/triggered_effect [@trigger='onSelfBuffStart']">
+	
+	<insertAfter xpath="/buffs/buff[@name='buffInfection04']/effect_group/triggered_effect [@trigger='onSelfBuffStart']">
 		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection01Untreated"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection01GetBetter"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection02Untreated"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection02GetBetter"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection03Untreated"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection04"/>
-				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfectionMain"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionMain" perc_add=".64"/>
-	</insertAfter>-->
+		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection01GetBetter"/>
+		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection02Untreated"/>
+		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection02GetBetter"/>
+		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection03Untreated"/>
+		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection04"/>
+		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfectionMain"/>
+		<triggered_effect trigger="onSelfBuffStart" target="self" action="ModifyCVar" cvar="infectionCounter" operation="set" value="64"/>
+	</insertAfter>
 	
 	<!--immunity from infection after taking "The Cure"-->
 	<append xpath="/buffs">
