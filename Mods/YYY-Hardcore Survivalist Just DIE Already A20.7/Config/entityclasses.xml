@@ -25,13 +25,14 @@
 	<insertAfter xpath="/entity_classes/entity_class[@name='playerMale']//property[@name='ChestExplosionDamageMultiplier']">
 	<property name="Buffs" value="buffInfectionMain"/>
 	</insertAfter>	
-	
-	<!--backpack size & unencumbered carrying capacity-->
+ 	<!--backpack size & unencumbered carrying capacity-->
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CarryCapacity']/@value">20</set>
 	<set xpath="/entity_classes/entity_class/effect_group/passive_effect[@name='BagSize']/@value">50</set>
 	<set xpath="/entity_classes/entity_class/effect_group/passive_effect[@name='PlayerExpGain'][@tags='Upgrading']/@value">4</set>
 	
-	<set xpath="/entity_classes/entity_class/effect_group/triggered_effect[@trigger='onSelfRespawn'] [@action='AddBuff'] [@target='self']/@buff">buffStatusCheck01,buffStatusCheck02,buffPerkAbilityUpdate,buffNearDeathTraumaTrigger</set>
+	<set xpath="/entity_classes/entity_class/effect_group/triggered_effect[@trigger='onSelfRespawn'] [@action='AddBuff'] [@target='self']/@buff">buffStatusCheck01,buffStatusCheck02,buffPerkAbilityUpdate,buffNearDeathTraumaTrigger,buffInfectionMain</set>
+	<set xpath="/entity_classes/entity_class/effect_group/triggered_effect[@trigger='onSelfEnteredGame'] [@action='AddBuff'] [@target='self']/@buff">buffStatusCheck01,buffStatusCheck02,buffInfectionMain</set>
+	
 	<!--XP penalties after death-->
 	<set xpath="/entity_classes/entity_class/effect_group/passive_effect[@name='ExpDeficitPerDeathPercentage']/@value">.4</set>
 	<set xpath="/entity_classes/entity_class/effect_group/passive_effect[@name='ExpDeficitMaxPercentage']/@value">1</set>
