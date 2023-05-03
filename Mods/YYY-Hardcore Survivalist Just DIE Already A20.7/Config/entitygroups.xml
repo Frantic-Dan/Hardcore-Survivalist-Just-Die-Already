@@ -169,7 +169,7 @@
 	<entitygroup name="SnowBiomeDIEmod">
 		<entity name="zombieLumberjack" prob="2.5"/>
 		<entity name="zombieFatHawaiian" prob="0.4"/>
-		<entity name="zombieMoe" prob="0.4"/>
+		<entity name="zombieMoeFeral" prob="0.4"/>
 		<entity name="zombieFemaleFat" prob="0.4"/>
 		<entity name="zombieBoeFeral" prob="0.2"/>
 		<entity name="zombieJoeFeral" prob="0.2"/>
