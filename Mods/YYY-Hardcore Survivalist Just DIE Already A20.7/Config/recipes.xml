@@ -239,7 +239,7 @@
 	
 	<set xpath="/recipes/recipe[@name='cementMixer']//ingredient[1]/@count">30</set>
 	<set xpath="/recipes/recipe[@name='cementMixer']//ingredient[2]/@count">5</set>
-	<set xpath="/recipes/recipe[@name='cementMixer']//ingredient[4]/@count">2</set>
+	<set xpath="/recipes/recipe[@name='cementMixer']//ingredient[4]/@count">12</set>
 	
 	<insertAfter xpath="/recipes/recipe[@name='cntGunSafe']">
 	<recipe name="cntHardenedChestSecure" count="1" craft_area="workbench" tags="workbenchCrafting">
