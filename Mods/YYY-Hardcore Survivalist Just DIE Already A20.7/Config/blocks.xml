@@ -360,6 +360,12 @@
 	<property name="DowngradeBlock" value="plantedPumpkin1"/>
 	</insertAfter>
 	
+	<insertAfter xpath="//block[@name='treeMaster']//property[18]">
+		<property class="RepairItems">
+		<property name="resourceWood" value="50"/>
+	</property>
+	</insertAfter>
+		
 		
 	<!-- plantedCorn3Harvest -->
 	<setattribute xpath="/blocks/block[@name='plantedCorn3Harvest']/drop[@event='Harvest'][@name='foodCropCorn'][@tag='wildCropsHarvest'][@count='1']" name="prob">0.75</setattribute>
