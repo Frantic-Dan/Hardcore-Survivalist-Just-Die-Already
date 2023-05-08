@@ -234,6 +234,8 @@
 	<!--XP gain from art of mining coffee buff removeed-->
 	<remove xpath="//perk[@name='perkArtOfMiningCoffee']/effect_group[1]//passive_effect[@name='PlayerExpGain']"/>
 	<remove xpath="//perk[@name='perkArtOfMiningCoffee']/effect_group[2]//passive_effect[@name='PlayerExpGain']"/>	
+	<set xpath="//perk[@name='perkArtOfMiningCoffee']/effect_group[1]//passive_effect[1]/@value">0.25</set>
+	<set xpath="//perk[@name='perkArtOfMiningCoffee']/effect_group[2]//passive_effect[1]/@value">0.25</set>
 	
 </configs>
 
