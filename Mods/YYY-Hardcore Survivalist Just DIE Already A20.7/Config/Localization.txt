@@ -48,6 +48,7 @@ foodCanStockcooked,Cooked stock
 foodCanStockcookedDesc,"It's not much, but it's better than starving, right?"
 foodCanTunacooked,Cooked tuna
 foodCanTunacookedDesc,"A can of cooked tuna. Reminds you of a simpler time."
+foodHoney,Honeycomb
 potofchiliDesc,"Double portion of cooked chili. Still burns on the way out."
 potofbeefDesc,"Two cans of beef rations cooked in a pot. Tender and filling."
 potoflambDesc,"Two cans of lamb rations cooked in a pot. Leathery and filling."
