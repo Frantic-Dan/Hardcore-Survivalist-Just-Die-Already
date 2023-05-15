@@ -12,13 +12,13 @@
 	<property name="ExperienceGain" value="650"/>
 	</append>
 	<!--zero XP from bloodmoon zombie kills-->
-	<append xpath="entity_classes/entity_class[@name='playerMale']">
+	<!-- <append xpath="entity_classes/entity_class[@name='playerMale']">
 	<effect_group>
         <passive_effect name="PlayerExpGain" operation="perc_subtract" value="0.5" tags="Kill">
             <requirement name="IsBloodMoon"/>
         </passive_effect>
 	</effect_group>
-	</append>
+	</append> -->
 	
 	<!--start with infection-->
 	<remove xpath="/entity_classes/entity_class[@name='playerMale']//property[@name='Buffs']"/>
